@@ -1,0 +1,64 @@
+#include "myedit.h"
+
+MyEdit::MyEdit(QWidget *parent)
+    : QMainWindow(parent)
+{
+    resize(700, 600);
+
+    init();
+
+    //将菜单添加到菜单栏中
+    this->menuBar()->addMenu(m_pFileMenu);
+
+    m_pCenterTE = new QTextEdit;
+    setCentralWidget(m_pCenterTE);
+
+    addToolBar(m_pFileTool);
+}
+
+MyEdit::~MyEdit()
+{
+
+}
+
+void MyEdit::init()
+{
+    //产生一个文件菜单
+    m_pFileMenu = new QMenu("文件");
+    //产生一个菜单上的选项
+    m_pOpenAction = new QAction(QIcon(QPixmap(":/map/open.png")), "Open");
+    //设置快捷方式
+    m_pOpenAction->setShortcut(QKeySequence::Open);
+    //设置提示
+    m_pOpenAction->setStatusTip("您将要打开一个文件");
+
+    m_pSaveAction = new QAction(QIcon(QPixmap(":/map/save.png")), "SaveFile");
+    m_pSaveAction->setShortcut(QKeySequence::Save);
+    m_pSaveAction->setStatusTip("您将要保存一个文件");
+
+    m_pSaveAsAction = new QAction("SaveAs");
+    m_pSaveAsAction->setShortcut(QKeySequence::SaveAs);
+    m_pSaveAsAction->setStatusTip("您将要另保存一个文件");
+
+    m_pCloseAction = new QAction(QIcon(QPixmap(":/map/close.png")), "Close");
+    m_pCloseAction->setShortcut(QKeySequence::Close);
+    m_pCloseAction->setStatusTip("您将要关闭一个文件");
+
+    m_pExitAction = new QAction(QIcon(QPixmap(":/map/exit.png")), "退出");
+    m_pExitAction->setShortcut(QKeySequence::Quit);
+    m_pExitAction->setStatusTip("您将要退出程序");
+
+    //将操作选项添加到菜单中
+    m_pFileMenu->addAction(m_pOpenAction);
+    m_pFileMenu->addAction(m_pSaveAction);
+    m_pFileMenu->addAction(m_pSaveAsAction);
+    m_pFileMenu->addAction(m_pCloseAction);
+    m_pFileMenu->addAction(m_pExitAction);
+
+    m_pFileTool = new QToolBar;
+    m_pFileTool->addAction(m_pOpenAction);
+    m_pFileTool->addAction(m_pCloseAction);
+    m_pFileTool->addAction(m_pSaveAction);
+    m_pFileTool->addAction(m_pSaveAsAction);
+
+}

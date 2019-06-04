@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>map/close.png</file>
+        <file>map/exit.png</file>
+        <file>map/new.png</file>
+        <file>map/open.png</file>
+        <file>map/save.png</file>
+        <file>map/copy.png</file>
+        <file>map/cut.png</file>
+        <file>map/paste.png</file>
+        <file>map/undo.png</file>
+        <file>map/aboutqt.png</file>
+    </qresource>
+</RCC>

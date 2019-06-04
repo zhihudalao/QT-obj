@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\dialog.o
+./release\chatroom.o
+./release\clientsocket.o
+./release\roommanager.o
+./release\videosurface.o
+./release\moc_mainwindow.o
+./release\moc_dialog.o
+./release\moc_chatroom.o
+./release\moc_clientsocket.o
+./release\moc_videosurface.o
+);

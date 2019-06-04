@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>map/close.png</file>
+        <file>map/exit.png</file>
+        <file>map/new.png</file>
+        <file>map/open.png</file>
+        <file>map/save.png</file>
+    </qresource>
+</RCC>
